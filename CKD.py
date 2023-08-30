@@ -51,7 +51,7 @@ x = sc.fit_transform(x)
 
 x_tr,x_tt,y_tr,y_tt= train_test_split(x,y,train_size=0.84,random_state=255)
 
-logr= LogisticRegression(penalty='elasticnet',random_state=620,solver='saga',class_weight={0.0:0.85,1.0:0.15},l1_ratio=0.7)
+logr= LogisticRegression(max_iter=1000,penalty='elasticnet',random_state=620,solver='saga',class_weight={0.0:0.85,1.0:0.15},l1_ratio=0.7)
 logr.fit(x_tr,y_tr)
 
 rof= RandomForestClassifier(n_estimators=125,criterion='entropy',random_state=552,class_weight={0.0:0.87,1.0:0.1},max_samples=75,ccp_alpha=0.12)

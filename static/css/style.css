@@ -17,9 +17,11 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
-h7 { font-family: 'Times New Roman', Times, serif;
-font-size: larger;
-color: red;}
+h7 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  color: red;
+}
 
 /*--------------------------------------------------------------
 # Preloader
@@ -120,7 +122,7 @@ color: red;}
   font-weight: 700;
   letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
-  
+
 }
 
 #header .logo a {
@@ -131,7 +133,7 @@ color: red;}
   max-height: 40px;
   /* position: absolute; */
   left: 0;
-  
+
 }
 
 /**
@@ -818,7 +820,7 @@ section {
   }
 }
 
-.input-box{
+.input-box {
   margin-bottom: 20px;
 }
 
@@ -847,16 +849,18 @@ select {
   font-size: 16px;
   text-transform: uppercase;
   border: 2px solid black;
-  }
+}
 
-.btn-container{
+.btn-container {
   text-align: center;
   margin-top: 10px;
 
 }
+
 .predict-btn:hover {
   background-color: black;
-  }
+}
+
 /*--------------------------------------------------------------
 # Algorithms
 --------------------------------------------------------------*/
