@@ -61,6 +61,10 @@
         <div class="d-flex justify-content-between align-items-center">
           <div class="result-box">
             <h1>Great! You are Healthy</h1>
+            <p>Here you can download your health report:</p>
+              <form action="{{ url_for('download') }}">
+                <button type="submit">Download Report</button>
+              </form>
             <p>You are absolutely alright! There is no Marks for kidney disease. Enjoy your life with full of happiness.
             </p>
           </div>

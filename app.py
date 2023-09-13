@@ -74,6 +74,9 @@ def index():
         arr = np.array([[data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13,data14,data15,data16,data17,data18,data19,data20,data21,data22,data23,data24]])
         arr = arr.astype(float)
         pred = model.predict(arr)
+
+        session['pred'] = bool(pred)
+
         
         
         if(pred):
@@ -190,10 +193,19 @@ def download():
     pdf.drawString(50, 280, f"appetite: {data22}")
     pdf.drawString(50, 260, f"pedal edema: {data23}")
     pdf.drawString(50, 240, f"anemia: {data24}")
-    pdf.setFillColorRGB(255, 0, 0)
     pdf.setFont("Helvetica-Bold", 12)
-    pdf.drawString(50, 220, f"CKD: Positive")
-    pdf.drawString(50, 200, f"According to prediction based on patient's data, Patient have Chronic Kidney Disease.")
+
+    pred = session.get('pred', False)
+
+    if(pred):
+        pdf.setFillColorRGB(255, 0, 0)
+        pdf.drawString(50, 220, f"CKD: Positive")
+        pdf.drawString(50, 200, f"According to prediction based on patient's data, Patient have Chronic Kidney Disease.")
+    else:
+        pdf.setFillColorRGB(0, 128, 0)
+        pdf.drawString(50, 220, f"CKD: Negative")
+        pdf.drawString(50, 200, f"According to prediction based on patient's data, Patient don't have Chronic Kidney Disease.")
+
     pdf.save()
 
     # Set up the response
